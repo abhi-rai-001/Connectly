@@ -18,13 +18,11 @@ import NoFriends from "../components/NoFriends";
 import { getLanguageFlag } from "../components/GetFlag";
 import { capitalize } from "../utils/capitalize";
 
-const DEFAULT_AVATAR = "/default-avatar.png"; // add a real asset
 
 const Home = () => {
   const queryClient = useQueryClient();
   const [outgoingReq, setOutgoingReq] = useState(new Set());
 
-  /* ──────── Queries ──────── */
   const {
     data: friends = [],
     isLoading: loadingFriends,
@@ -46,7 +44,6 @@ const Home = () => {
     queryFn: getOutgoingFriendReq,
   });
 
-  /* ──────── Mutations ──────── */
   const { mutate: sendReqMutation, isPending } = useMutation({
     mutationFn: sendFriendReq,
     onSuccess: () => {
@@ -54,18 +51,15 @@ const Home = () => {
     },
   });
 
-  /* ──────── Track outgoing IDs ──────── */
   useEffect(() => {
     const ids = new Set();
     outgoingFriendReq?.forEach((req) => ids.add(req.recipient._id));
     setOutgoingReq(ids);
   }, [outgoingFriendReq]);
 
-  /* ──────── Render ──────── */
   return (
     <div className="min-h-screen flex flex-col p-4 sm:p-6 lg:p-8">
       <div className="container mx-auto space-y-10 flex-1">
-        {/* ---------- Header ---------- */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">
             Your Friends
@@ -76,7 +70,6 @@ const Home = () => {
           </Link>
         </div>
 
-        {/* ---------- Friends List ---------- */}
         <section className="space-y-4">
           <h3 className="text-xl font-semibold">
             Your Friends ({friends.length})
@@ -97,7 +90,6 @@ const Home = () => {
           )}
         </section>
 
-        {/* ---------- Recommended Users ---------- */}
         <section className="space-y-4">
           <h3 className="text-xl font-semibold">People You May Know</h3>
 
