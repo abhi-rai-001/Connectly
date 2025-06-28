@@ -160,7 +160,7 @@ const Signup = () => {
 
         <div className="hidden md:flex w-1/2 bg-base-200 relative items-center justify-center ">
           <img
-            src="/public/Video Call.png"
+            src="/video-call.png"
             alt="Video call illustration"
             className=" max-w-xs sm:max-w-[40vw] lg:max-w-[20vw] xl:max-w-[25vw] h-auto object-contain drop-shadow-lg absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2"
           />

@@ -121,7 +121,7 @@ const Login = () => {
         <div className="hidden lg:flex w-full lg:w-1/2 bg-base-200 relative items-center justify-center p-4 lg:p-8 min-h-[300px] lg:min-h-0">
           {" "}
           <img
-            src="/public/Video Call.png"
+            src="/video-call.png"
             alt="Video call illustration"
             className="max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-xs xl:max-w-sm h-auto object-contain drop-shadow-lg"
           />
